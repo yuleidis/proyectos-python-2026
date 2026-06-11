@@ -4,21 +4,21 @@ class SesionEstudio:
         self.tema = tema
         self.duracion_minutos = duracion_minutos
         self.completado = completado
-        self.completado = True
+      
 
     def resumen(self):
 
         if self.completado == True:
 
-            return  f"¡Felicidades!, Lo lograste realizar estos temas,{self.tema}, en este tiempo, {self.duracion_minutos}  "
+            return  f"¡Felicidades!, Lo lograste estudiar este tema,{self.tema}, en este tiempo, {self.duracion_minutos}  "
         else:
-            return  "No te preocupes, mañana continuas"
+            return  f"No te preocupes, mañana continuas con {self.tema}."
         
 
         
-p1 = SesionEstudio("Lectura critica", 50, "True" )
+p1 = SesionEstudio("Lectura critica", 50, True)
+p2 = SesionEstudio("Razonamiento Cuantitativo", 40, False)
 
 print(p1.resumen())
-#print(p1.resumen())
-
+print(p2.resumen())
 
