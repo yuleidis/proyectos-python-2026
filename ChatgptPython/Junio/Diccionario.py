@@ -94,7 +94,7 @@ for valor in notas.values():
 
   resultado = sumar / entre
   #sumar = sum(valor)
-print("Promedio:",resultado)
+print("Promedio:",resultado)"""
 
 
 ## otra opcion de resolver el ejercicio C
@@ -110,11 +110,12 @@ suma = 0
 
 for nota in notas.values():
 
+    #tambien lo puedo hacer de esta forma SUMA = SUMA + NOTA
     suma += nota
 
     promedio = suma / len(notas)
 
 print("El promedio es:", promedio)
-"""
+
 
 
