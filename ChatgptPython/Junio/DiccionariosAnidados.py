@@ -1,6 +1,6 @@
 """
-
-Ejercicio 1
+✅
+✅Ejercicio 1
 
 Observa este diccionario:
 
@@ -19,21 +19,46 @@ Imprime solamente:
 Bogotá
 
 
+##Desarrollo
+
+estudiante ={
+    "nombre": "Ana",
+    "edad": 22,
+    "direccion":{
+    "ciudad": "Bogota",
+    "barrio": "centro"
+
+    }
+}
+
+print(estudiante["direccion"]["ciudad"])
+
 """
 
 
 """
-Ejercicio 2
+✅Ejercicio 2
 
 Con el mismo diccionario imprime:
 
 Centro
 
-"""
+#DESARROLLO
+estudiante = {
+
+    "nombre": "Ana",
+    "edad": 22,
+    "direccion":{
+     "ciudad": "Bogota",
+     "barrio": "centro"
+    }
+}
+
+print(estudiante["direccion"]["barrio"])"""
 
 
 """
-Ejercicio 3
+✅Ejercicio 3
 
 Modifica la ciudad para que sea:
 
@@ -42,13 +67,30 @@ Medellín
 Luego imprime todo el diccionario.
 
 
+
+estudiante ={
+
+    "nombre": "Ana",
+    "edad": 22,
+    "direccion":{
+        "ciudad": "bogota",
+        "barrio": "centro"
+    }
+
+}
+
+estudiante["direccion"]["ciudad"] = "Medellin"
+
+print(estudiante)
+
 """
 
 
 
+
 """
 
-Ejercicio 4 ⭐
+✅Ejercicio 4 ⭐
 
 Crea este diccionario:
 
@@ -67,8 +109,20 @@ Carlos trabaja como Desarrollador
 
 usando los datos del diccionario.
 
-"""
 
+
+empresa = {
+    "nombre": "Techsoft",
+    "empleado":{
+
+        "nombre":"Carlos",
+        "cargo":"Desarrollador",
+        "salario": 3000
+    }
+}
+
+print(empresa["empleado"]["nombre"],"trabaja como",empresa["empleado"]["cargo"])
+"""
 
 """
 Ejercicio 5 ⭐⭐
@@ -88,3 +142,12 @@ Y muestra:
 Yule estudia Ingeniería de Sistemas y está en el semestre 10
 
 """
+
+persona = {
+    "nombre": "Yule",
+    "Estudio": {
+        "carrera": "Ingenieria de Sistema",
+        "Semestre": 10
+    }
+}
+print(persona["nombre"],"Estudia",persona["Estudio"]["carrera"], "y esta en el semestre", persona["Estudio"]["Semestre"])
