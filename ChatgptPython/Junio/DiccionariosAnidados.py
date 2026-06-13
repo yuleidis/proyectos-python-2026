@@ -1,5 +1,5 @@
 """
-✅
+
 ✅Ejercicio 1
 
 Observa este diccionario:
@@ -125,7 +125,7 @@ print(empresa["empleado"]["nombre"],"trabaja como",empresa["empleado"]["cargo"])
 """
 
 """
-Ejercicio 5 ⭐⭐
+✅Ejercicio 5 ⭐⭐
 
 Crea un diccionario que almacene:
 
@@ -141,7 +141,6 @@ Y muestra:
 
 Yule estudia Ingeniería de Sistemas y está en el semestre 10
 
-"""
 
 persona = {
     "nombre": "Yule",
@@ -151,3 +150,4 @@ persona = {
     }
 }
 print(persona["nombre"],"Estudia",persona["Estudio"]["carrera"], "y esta en el semestre", persona["Estudio"]["Semestre"])
+"""
