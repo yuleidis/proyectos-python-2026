@@ -62,27 +62,14 @@ for estudiante in estudiantes:
   print(f"{estudiante["nombre"]} tiene {estudiante["edad"]} años  ")
 """
 
-
-
 """
-Ejercicio 3 ⭐
+Ejercicio 3 ✅⭐
 
 Calcula el promedio de edades.
 
 Resultado:
 
 Promedio: 20.33
-
-"""
-
-
-
-
-
-
-
-
-
 
 
 estudiantes =[
@@ -94,28 +81,15 @@ estudiantes =[
 # estudinates diccionario
 # estudiante lista
 
+sumar = 0
+
 for estudiante in estudiantes:
 
+    sumar += estudiante["edad"]
 
+    promedio = sumar / len(estudiantes)
 
-    promedio = len(estudiantes)
-
-
-    print("Promedio:",promedio)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("Promedio:",promedio)"""
 
 
 """
@@ -127,6 +101,19 @@ Resultado:
 
 Edad mayor: 22
 """
+
+estudiantes =[
+    {"nombre":"Ana","edad":20},
+    {"nombre":"Carlos","edad":22},
+    {"nombre":"Maria","edad":19}
+]
+
+
+for estudiante in estudiantes:
+
+   
+    a = max(estudiante.values()) 
+    print(a)
 
 
 """
