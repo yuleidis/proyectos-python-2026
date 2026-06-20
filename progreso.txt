@@ -1,1 +1,2 @@
-Estudie formulacion de proyecto,120 
+Razonamiento cuatitativo,50
+Diseño de software,50
