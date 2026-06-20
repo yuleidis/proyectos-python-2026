@@ -20,8 +20,17 @@ def ver_reporte():
         with open("progreso.txt", "r", encoding="utf-8") as archivo:
             for linea in archivo:
                 datos = linea.strip().split(",")
+                tema = datos[0] # posición 0: El nombre del tema
+                minutos = int(datos[1]) # Posición 1: Los minutos como números
+
+                #Mostramos cada sesión individualmente en la terminal
+                print(f"• {tema}: {minutos} minutos")
+
+                #seguimos acumulando el total
                 minutos_totales = minutos_totales + int(datos[1])
-            print(f"📊 Reporte Actualizado: Llevas {minutos_totales} minutos estudiados en total.\n")
+
+        print(f"\n📊 Total acumulado: {minutos_totales} minutos estudiados.\n")
+        
     except FileNotFoundError:
          print("⚠️ El archivo 'progreso.txt' no existe. Registra una sesión primero.\n")
 
