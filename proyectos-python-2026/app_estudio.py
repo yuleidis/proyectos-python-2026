@@ -15,7 +15,17 @@ def guardar_sesion():
 
 
 def ver_reporte():
+    #Definimos los códigos de color
+    AZUL = "\033[94m"
+    VERDE = "\033[92m"
+    ROJO = "\033[91m"
+    RESET ="\033[0m" # Sirve para volver al color normal
+
+
+
     minutos_totales = 0
+    print(f"\n{AZUL}--- 📚 DETALLE DE SESIONES ESTUDIADAS ---{RESET}")
+
     try:
         with open("progreso.txt", "r", encoding="utf-8") as archivo:
             for linea in archivo:
@@ -24,19 +34,24 @@ def ver_reporte():
                 minutos = int(datos[1]) # Posición 1: Los minutos como números
 
                 #Mostramos cada sesión individualmente en la terminal
-                print(f"• {tema}: {minutos} minutos")
+                print(f"• {tema}: {VERDE}{minutos} minutos{RESET}")
 
                 #seguimos acumulando el total
                 minutos_totales = minutos_totales + int(datos[1])
 
-        print(f"\n📊 Total acumulado: {minutos_totales} minutos estudiados.\n")
+        print(f"\n📊 Total acumulado: {VERDE}{minutos_totales}{RESET} minutos estudiados.\n")
         
     except FileNotFoundError:
-         print("⚠️ El archivo 'progreso.txt' no existe. Registra una sesión primero.\n")
+         print(f"{ROJO} ⚠️ El archivo 'progreso.txt' no existe.{RESET}.\n")
 
 
 # Bucle principal del programa
 while True:
+    VERDE = "\033[92m"
+    RESET = "\033[0m"
+    ROJO = "\033[91m"
+
+
     print("--- 📝 CONTROL DE ESTUDIO MULTI-PROFESIONAL ---")
     print("1. Registrar nueva sesión de estudio")
     print("2. Ver reporte de minutos totales")
@@ -50,7 +65,7 @@ while True:
     elif option == "2":
         ver_reporte()
     elif option == "3":
-        print("👋 ¡Buen trabajo hoy! Sigue así. ¡Feliz fin de semana!")
+        print(f"👋 {VERDE}¡Buen trabajo hoy! Sigue así. ¡Feliz fin de semana!{RESET}")
         break
     else:
-        print("❌ Opción inválida. Elige 1, 2 o 3.\n")
+        print(f"❌ Opción {ROJO}inválida.{RESET} Elige 1, 2 o 3.\n")
