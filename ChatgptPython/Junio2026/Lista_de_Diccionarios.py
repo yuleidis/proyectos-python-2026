@@ -170,14 +170,140 @@ print("Edad menor", menor)
 
 
  """
-#EJERCICIO 7
+#EJERCICIO 7✅
 """Encuentra el nombre del estudiante con la edad mayor.
+Salida
+Carlos tiene la edad mayor: 22
+
 
 estudiantes = [
     {"nombre":"Ana","edad":20},
     {"nombre":"Carlos","edad":22},
     {"nombre":"Maria","edad":19}
-]"""
+]
+
+mayor_edad = estudiantes[0]["edad"]
+nombre_mayor = estudiantes[0]["nombre"]
+
+#nombre_mayor = 0
+for estudiante in estudiantes:
+    if estudiante["edad"] > mayor_edad:
+        mayor_edad = estudiante["edad"]
+        nombre_mayor = estudiante["nombre"]
+ 
+print(f"{nombre_mayor} tiene la edad mayor: {mayor_edad}")"""
+
+#EJERCICIO 8✅
+"""
+Dada la lista:
+estudiantes = [
+    {"nombre":"Ana","edad":20},
+    {"nombre":"Carlos","edad":22},
+    {"nombre":"Maria","edad":19},
+    {"nombre":"Yule","edad":28}
+]
+
+Haz un programa que muestre:
+
+Cantidad de estudiantes: 4
+
+Promedio de edades: 22.25
+
+Edad mayor: 28
+Nombre: Yule
+
+Edad menor: 19
+Nombre: Maria
+"""
+# ✅Cantidad de estudiantes: 4
+"""
+estudiantes =[
+    {"nombre":"Ana","edad":20},
+    {"nombre":"Carlos","edad":22},
+    {"nombre":"Maria","edad":19},
+    {"nombre":"Yule","edad":28}
+]
+for estudiante in estudiantes:
+  
+ contar = len(estudiantes)
+ 
+print(contar)
+"""
+
+#✅Promedio de edades: 22.25
+"""
+estudiantes = [
+    {"nombre":"Ana","edad":20},
+    {"nombre":"Carlos","edad":22},
+    {"nombre":"Maria","edad":19},
+    {"nombre":"Yule","edad":28}
+]
+
+
+
+sumar = 0
+for estudiante in estudiantes:
+    
+
+    sumar += estudiante["edad"]
+
+    promedio = sumar/len(estudiantes)
+
+print(f"Promedio de edades:{promedio}")"""
+
+#Edad mayor: 28✅
+#Nombre: Yule
+"""
+estudiantes = [
+    {"nombre":"Ana","edad":20},
+    {"nombre":"Carlos","edad":22},
+    {"nombre":"Maria","edad":19},
+    {"nombre":"Yule","edad":28}
+]
+
+edad_mayor = estudiantes[0]["edad"]
+nombre = estudiantes[0]["nombre"]
+
+for estudiante in estudiantes:
+
+    if estudiante["edad"] > edad_mayor:
+
+        edad_mayor = estudiante["edad"]
+        nombre = estudiante["nombre"]
+
+print(f"Edad mayor:{edad_mayor}")
+print(f"nombre:{nombre}")
+"""
+
+
+
+#Edad menor: 19✅
+#Nombre: Maria
+
+"""estudiantes = [
+    {"nombre":"Ana","edad":20},
+    {"nombre":"Carlos","edad":22},
+    {"nombre":"Maria","edad":19},
+    {"nombre":"Yule","edad":28}
+]
+
+edad_menor = estudiantes[0]["edad"]
+nombre = estudiantes[0]["nombre"]
+
+for estudiante in estudiantes:
+    if estudiante["edad"] < edad_menor:
+
+        edad_menor = estudiante["edad"]
+        nombre = estudiante["nombre"]
+
+print(f"Edad menor:{edad_menor}")
+print(f"nombre:{nombre}")"""
+
+
+
+
+
+
 
 
 

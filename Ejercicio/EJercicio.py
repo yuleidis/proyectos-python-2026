@@ -1,11 +1,6 @@
-tiempo = 0
-
-a=1
-b=2
-c=5
-d=8
-
-
+thislist = ["apple", "banana", "cherry", "orange", "kiwi", "mango"]
+thislist[1:3] = ["blackcurrant", "watermelon"]
+print(thislist)
 
 
 
