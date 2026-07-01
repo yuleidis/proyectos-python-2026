@@ -54,6 +54,36 @@ def generar_reporte_clasificado():
     print(f"🔹 Total en Saber Pro: {tot_saber} min.\n")    
 
 
+def eliminar_sesion():
+    print("\n--- 🗑️ ELIMINAR SESIÓN DE ESTUDIO ---")
+    if not historial_completo:
+        print("⚠️ El historial está vacío. No hay nada que eliminar.\n")
+        return
+    
+    tema_a_borrar = input("Escribe el nombre EXACTO del tema que quieres eliminar: ")
+
+    encontrado = False
+
+    #Recorremos la lista para buscar el diccionario que coincida
+    for sesion in historial_completo:
+        if sesion["tema"].lower() == tema_a_borrar.lower():
+            historial_completo.remove(sesion) # Lo borramos de la lista
+            encontrado = True
+            break #Salimos del bucle una vez borrado
+
+    if encontrado:
+        guardar_en_disco() # Guardamos los cambio den el archivo .json
+        print(f"✨ ¡La sesión de '{tema_a_borrar}' fue eliminada con éxito!\n")
+
+    else:
+     print(f"❌ No se encontró ninguna sesión con el tema '{tema_a_borrar}'.\n")
+
+
+
+
+
+
+
 # Al arrancar el programa, cargamos los datos guardados anteriormente
 
 cargar_desde_disco()
@@ -62,9 +92,10 @@ while True:
     print("--- 📱 SISTEMA PERMANENTE MULTI-PROYECTO ---")
     print("1. Registrar nueva sesión de estudio")
     print("2. Ver reporte clasificado por materia")
-    print("3. Salir del programa")
+    print("3. Eliminar una sesión por material")
+    print("4. Salir del programa")
 
-    opcion = input("Elige una opción (1, 2 o 3):")
+    opcion = input("Elige una opción (1, 2,3 o 4):")
 
 
     if opcion == "1":
@@ -73,6 +104,9 @@ while True:
         generar_reporte_clasificado()
 
     elif opcion == "3":
+        eliminar_sesion()
+
+    elif opcion == "4":
         print("👋¡ Datos asegurados! Buen descanso. ¡Chao!")
         break
 
