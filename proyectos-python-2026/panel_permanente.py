@@ -21,6 +21,24 @@ def cargar_desde_disco():
 def registrar_sesion():
     print("\n--- 📝 REGISTRAR NUEVA SESIÓN ---")
     tema = input("¿Qué tema específico estudiaste?:")
+    
+    # 1. SISTEMA DE SEGURIDAD: Validamos si el tema ya existe
+
+    ya_existe = False
+
+    for sesion in historial_completo:
+        if sesion["tema"].lower() == tema.lower(): 
+            ya_existe = True
+            break # Si lo encuentra detiene la busqueda de inmediato
+
+
+    if ya_existe:
+        print(f"⚠️ ¡Atención El tema '{tema}' ya está resgistrado en tu historial.")
+        print("Usa un nombre diferente o elimina la sesión anterior primero.")
+        return #Este ' return' detiene la función aqui y no guarda nada
+    
+    #2. Si el tema no existe, el programa continúa normalmente abajo
+
     minutos = int(input("¿Cuántos minutos le dedicaste?:"))
     print("Selecciona la materia:\n1. Python\n2. Saber Pro")
     opc_materia = input("Elige (1 o 2): ")
@@ -31,6 +49,10 @@ def registrar_sesion():
     historial_completo.append(nueva_sesion)
 
     guardar_en_disco () # Guardamos automáticamente en el archivo
+    print("✨ ¡Sesión guardada con éxito en el archivo historial.jso!\n")
+
+
+
 
 def generar_reporte_clasificado():
     print("\n--- 📊 REPORTE DE RENDIMIENTO CLASIFICADO ---")
