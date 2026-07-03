@@ -55,7 +55,10 @@ def registrar_sesion():
 
 
 def generar_reporte_clasificado():
+    print("\n==================================================")
     print("\n--- 📊 REPORTE DE RENDIMIENTO CLASIFICADO ---")
+    print("==================================================")
+
     if not historial_completo:
         print("⚠️ El historial está vacío. Registra sesiones primero.\n")
         return
@@ -63,17 +66,35 @@ def generar_reporte_clasificado():
     tot_python = 0
     tot_saber = 0
 
+    #Cabecera de la tabla con espacios fijos
+    #En python ':<25' significa: 'deja un espacio de 25 caracteres alineado a la izquierda'
+    print(f"{'MATERIA':<15} | {'TEMA':<20} | {'DURACION':<10}")
+    print("-" * 52)
+
     for sesion in historial_completo:
+        materia_formato = f"[{sesion['materia']}]"
+        tema_formato = sesion["tema"]
+        minutos_formato = f"{sesion['minutos']} min"
+
+        #Imprimimos la fila perfectamente alineada en columnas
+        print(f"{materia_formato:<15} | {tema_formato:<20} | {minutos_formato:<10} ")
+
+
+        #Sumamos a los acumuladores normales
         if sesion["materia"] == "Python":
             tot_python += sesion["minutos"] 
-            print(f"💻 [Python] {sesion['tema']}: {sesion['minutos']} min")
+            
 
         else:
             tot_saber += sesion["minutos"]
-            print(f"📝 [Saber Pro] {sesion['tema']}:{sesion['minutos']} min")
+        
+    print("-" * 52)
+    print(f"\n🔹 Total en programación Python: {tot_python} min.")
+    print(f"🔹 Total en Saber Pro: {tot_saber} min.\n")   
+    print("==================================================\n") 
 
-    print(f"\n🔹 Total en Python: {tot_python} min.")
-    print(f"🔹 Total en Saber Pro: {tot_saber} min.\n")    
+
+
 
 
 def eliminar_sesion():
