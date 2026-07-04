@@ -1,6 +1,22 @@
 import json # Importamos la herramienta para manejar archivos JSON
+import os # 1. Importar esta libreria para poder limpiar la pantalla
 
 historial_completo = []
+
+# 2. Definimos variables de colores para decorar la terminal
+VERDE = "\033[92m"
+AZUL = "\033[94m"
+AMARILLO = "\033[93m"
+ROJO = "\033[91m"
+RESET = "\033[0m" #Devuelve el texto a la normalidad
+
+def limpiar_pantalla():
+    #3. Este comando borra todo el texto viejo de la terminal automáticamente
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+    #... tus funciones registrar_Sesion y eliminar_sesion siguen igual...
+    #Pero puedes meterles color, por ejemplo:
+    #print(f"{VERDE}✨ ¡Sesión guardada con éxito!{RESET}")
 
 def guardar_en_disco():
     #Guarda la lista de diccionarios en un archivo real
@@ -132,27 +148,36 @@ def eliminar_sesion():
 cargar_desde_disco()
 
 while True:
-    print("--- 📱 SISTEMA PERMANENTE MULTI-PROYECTO ---")
-    print("1. Registrar nueva sesión de estudio")
-    print("2. Ver reporte clasificado por materia")
-    print("3. Eliminar una sesión por material")
-    print("4. Salir del programa")
+    limpiar_pantalla()
+
+    print(f"{AZUL}=================================================={RESET}")
+    print(f"     📱 {AZUL}SISTEMA PERMANENTE MULTI-PROYECTO{RESET}         ")
+    print(f"{AZUL}=================================================={RESET}")
+    print(f"{AMARILLO}1.{RESET} 📝 Registrar nueva sesión de estudio")
+    print(f"{AMARILLO}2.{RESET} 📊 Ver reporte clasificado por materia")
+    print(f"{AMARILLO}3.{RESET} 🗑️  Eliminar una sesión por tema")
+    print(f"{AMARILLO}4.{RESET} 👋 Salir del programa")
+    print(f"{AZUL}--------------------------------------------------{RESET}")
 
     opcion = input("Elige una opción (1, 2,3 o 4):")
 
 
     if opcion == "1":
         registrar_sesion()
+        input("\nPresiona Enter para volver al menú...") #Pausa para alcanzar a leer
     elif opcion == "2":
         generar_reporte_clasificado()
+        input("\nPresiona Enter para volver al menú...") #Pausa para alcanzar a leer
 
     elif opcion == "3":
         eliminar_sesion()
+        input("\nPresiona Enter para volver al menú...") #Pausa para alcanzar a leer
 
     elif opcion == "4":
-        print("👋¡ Datos asegurados! Buen descanso. ¡Chao!")
+        print(f"\n{VERDE}👋¡ Datos asegurados! Buen descanso. ¡Chao!{RESET}\n")
         break
 
     else:
-        print("❌ Opción inválida. \n")
+        print(f"{ROJO}❌ Opción inválida.{RESET}\n")
+        input("Presiona Enter para intentar de nuevo...")
 
